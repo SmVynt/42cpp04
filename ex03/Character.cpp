@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:03:46 by psmolin           #+#    #+#             */
-/*   Updated: 2025/09/23 13:34:55 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:40:14 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void Character::equip(AMateria* m)
 	{
 		if (!_inventory[i])
 		{
-			// _inventory[i] = m;
 			_inventory[i] = m->clone();
 			return ;
 		}
