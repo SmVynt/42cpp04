@@ -19,12 +19,14 @@ SRCS = \
 		AMateria.cpp \
 		Character.cpp \
 		Cure.cpp \
-		Ice.cpp
+		Ice.cpp \
+		MateriaSource.cpp
 HEADERS = \
 		AMateria.hpp \
 		Character.hpp \
 		Cure.hpp \
-		Ice.hpp
+		Ice.hpp \
+		MateriaSource.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp $(HEADERS)

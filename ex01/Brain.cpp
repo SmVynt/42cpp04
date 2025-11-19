@@ -12,16 +12,14 @@
 
 #include "Brain.hpp"
 
-Brain::Brain () {};
-
-// Brain::Brain(std::string type) :
-// 		_type(type)
-// {
-// 	std::cout << COL_G "Wrong Animal of type " << type << " has been created" COL_X << std::endl;
-// };
+Brain::Brain ()
+{
+	std::cout << COL_B "Brain has been created" COL_X << std::endl;
+}
 
 Brain::Brain (const Brain &other)
 {
+	std::cout << COL_B "Brain copy has been constructed" COL_X << std::endl;
 	for (int i = 0; i < IDEAS_COUNT; i++)
 		_ideas[i] = other._ideas[i];
 };
@@ -30,13 +28,17 @@ Brain &Brain::operator = (const Brain &other)
 {
 	if (this != &other)
 	{
+		std::cout << COL_B "Brain copy has been assigned" COL_X << std::endl;
 		for (int i = 0; i < IDEAS_COUNT; i++)
 			_ideas[i] = other._ideas[i];
 	}
 	return (*this);
 };
 
-Brain::~Brain (){};
+Brain::~Brain ()
+{
+	std::cout << COL_Y "Brain has been destroyed" COL_X << std::endl;
+};
 
 std::string	Brain::getIdea(unsigned int i) const
 {
