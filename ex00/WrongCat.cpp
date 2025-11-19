@@ -15,7 +15,6 @@
 WrongCat::WrongCat () :
 		WrongAnimal("WrongCat")
 {
-	// _type = "Cat";
 	std::cout << COL_G "A Wrong Cat has been created" COL_X << std::endl;
 };
 
@@ -28,7 +27,7 @@ WrongCat &WrongCat::operator = (const WrongCat &other)
 {
 	if (this != &other)
 	{
-		WrongAnimal::operator=(other);  // Call base class assignment
+		WrongAnimal::operator=(other);
 	}
 	std::cout << COL_G "Copy of a Wrong Cat has been assigned" COL_X << std::endl;
 	return (*this);
@@ -39,5 +38,5 @@ WrongCat::~WrongCat (){
 };
 
 void	WrongCat::makeSound() const {
-	std::cout << "*** Suspicious sounds ***" << std::endl;
+	std::cout << "*** wrong MEOW ***" << std::endl;
 }
