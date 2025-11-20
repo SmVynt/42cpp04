@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 00:00:00 by psmolin           #+#    #+#             */
-/*   Updated: 2025/11/19 00:00:00 by psmolin          ###   ########.fr       */
+/*   Created: 2025/11/20 12:46:13 by psmolin           #+#    #+#             */
+/*   Updated: 2025/11/20 13:08:16 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,6 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 		{
 			if (_templates[i])
 				delete _templates[i];
-		}
-		for (int i = 0; i < MATERIA_SLOTS; i++)
-		{
 			if (other._templates[i])
 				_templates[i] = other._templates[i]->clone();
 			else
@@ -68,9 +65,11 @@ void MateriaSource::learnMateria(AMateria* m)
 		if (!_templates[i])
 		{
 			_templates[i] = m->clone();
+			delete m;
 			return;
 		}
 	}
+	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

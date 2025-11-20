@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:03:46 by psmolin           #+#    #+#             */
-/*   Updated: 2025/09/23 13:40:14 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/11/20 13:17:34 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,11 @@ void Character::equip(AMateria* m)
 	{
 		if (!_inventory[i])
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			return ;
 		}
 	}
+	delete m;
 };
 
 void Character::unequip(int idx)
@@ -107,6 +108,5 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx >= INV_SIZE || !_inventory[idx])
 		return ;
-	std::cout << COL_Y << _name << COL_X << std::endl;
 	_inventory[idx]->use(target);
 };

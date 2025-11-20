@@ -6,14 +6,14 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 11:56:24 by psmolin           #+#    #+#             */
-/*   Updated: 2025/09/23 13:12:53 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/11/20 12:55:26 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include "Character.hpp"
 
-Cure::Cure() : AMateria("Cure") {}
+Cure::Cure() : AMateria("cure") {}
 Cure::Cure(const Cure &other) : AMateria(other) {}
 Cure &Cure::operator=(const Cure &other)
 {
